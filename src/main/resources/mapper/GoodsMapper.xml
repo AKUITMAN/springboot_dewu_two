@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.GoodsMapper">
+    <resultMap id="BaseResult" type="goods">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="pic" property="pic"></result>
+        <result column="price" property="price"></result>
+        <result column="goods_dec" property="goodsdec"></result>
+        <result column="c1" property="c1"></result>
+        <result column="c2" property="c2"></result>
+        <result column="getnum" property="getnum"></result>
+        <result column="grade" property="grade"></result>
+        <result column="pic1" property="pic1"></result>
+        <result column="pic2" property="pic2"></result>
+        <result column="pic3" property="pic3"></result>
+        <result column="pic4" property="pic4"></result>
+    </resultMap>
+    <select id="findAll" resultMap="BaseResult">
+        select * from shop
+    </select>
+    <select id="findById" resultMap="BaseResult">
+        select * from shop where id=#{id}
+    </select>
+    <select id="findAllHeat" resultMap="BaseResult">
+        select * FROM shop ORDER BY getnum DESC
+    </select>
+</mapper>
